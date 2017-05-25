@@ -8,5 +8,6 @@ public interface StandardDrone {
 	public abstract String moveBack();
 	public abstract String moveForth();
 	public abstract String getFormatedCoordinates();
+	String moveUp(int up);
 }
 
