@@ -48,4 +48,16 @@ public void testInitialMoveUp(){
 			
 		}
 	
+	@Test
+	public void testInitialMoveRight(){
+			
+			drone= new Drone();
+			String expectedCoordinates="("
+					+Integer.toString(x+1)+","
+			+Integer.toString(y)+","
+			+Integer.toString(z) + ")";
+			assertEquals(expectedCoordinates,drone.moveRight());
+			
+		}
+	
 }
