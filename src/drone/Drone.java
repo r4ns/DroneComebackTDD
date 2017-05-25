@@ -1,6 +1,19 @@
 package drone;
 
 public class Drone implements StandardDrone{
+	
+	private int [] startCoordinates;
+	private int [] boundaries;
+	public Drone()
+	{
+		
+	}
+	
+	public Drone(int [] startCoordinates, int [] boundaries )
+	{
+		this.startCoordinates=startCoordinates;
+		this.boundaries=boundaries;
+	}
 
 	@Override
 	public String moveUp() {
