@@ -1,10 +1,22 @@
 package drone;
 
 public class Drone implements StandardDrone{
+	
+	public int[]coordinates={30,0,30};
+	public int[]boundaries;
+	
+	public Drone(int[]coordinates){
+		this.coordinates=coordinates;
+	}
+	
+	public Drone(int[]boundaries,int[]coordinates){
+		this.boundaries=boundaries;
+		this.coordinates=coordinates;
+	}
 
 	@Override
 	public String moveUp() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
