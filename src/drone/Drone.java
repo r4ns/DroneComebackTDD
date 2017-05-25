@@ -6,6 +6,8 @@ public class Drone implements StandardDrone{
 	int y=0;
 	int z=30;
 	
+	
+	
 	@Override
 	public String moveUp() {
 		y++;
@@ -28,20 +30,22 @@ public class Drone implements StandardDrone{
 	@Override
 	public String moveRight() {
 		// TODO Auto-generated method stub
-		
-		return null;
+		x++;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveBack() {
 		// TODO Auto-generated method stub
-		return null;
+		z++;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveForth() {
 		// TODO Auto-generated method stub
-		return null;
+		z--;
+		return getFormatedCoordinates();
 	}
 
 	@Override

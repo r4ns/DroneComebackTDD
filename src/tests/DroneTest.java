@@ -12,6 +12,7 @@ public class DroneTest {
 	Drone drone;
 	int x=30, y=0, z=30;
 	
+
 	@Test
 public void testInitialMoveUp(){
 		
