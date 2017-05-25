@@ -34,10 +34,10 @@ public void testInitialMoveUp(){
 	@Test
 	public void testInitialMoveDown(){
 			
-			drone= new Drone();
+			drone= new Drone(30,1,30);
 			String expectedCoordinates="("
 					+Integer.toString(x)+","
-			+Integer.toString(y-1)+","
+			+Integer.toString(y)+","
 			+Integer.toString(z) + ")";
 			assertEquals(expectedCoordinates,drone.moveDown());
 			
