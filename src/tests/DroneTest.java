@@ -14,6 +14,12 @@ public class DroneTest {
 	
 
 	@Test
+	public void testConstructor1(){
+		drone=new Drone();
+		assertNotNull(drone);
+	}
+	
+	@Test
 public void testInitialMoveUp(){
 		
 		drone= new Drone();

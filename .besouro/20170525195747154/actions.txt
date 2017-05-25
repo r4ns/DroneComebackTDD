@@ -52,3 +52,4 @@ RefactoringAction 1495736659796 Drone.java REMOVE Drone()/2 METHOD
 FileOpenedAction 1495736663799 StandardDrone.java 330 7 0 0
 RefactoringAction 1495736684244 DroneTest.java RENAME testConstructor2()=><initializer /1> null
 EditAction 1495737054932 Cube.java 47 0 0 0
+EditAction 1495737058401 DroneTest.java 1892 7 20 7
