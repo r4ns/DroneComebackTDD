@@ -15,14 +15,14 @@ public class DroneTest {
 
 	@Test
 	public void testConstructor1(){
-		drone=new Drone();
+		drone=new Drone(x,y,z);
 		assertNotNull(drone);
 	}
 	
 	@Test
 public void testInitialMoveUp(){
 		
-		drone= new Drone();
+		drone= new Drone(x,y,z);
 		String expectedCoordinates="("
 				+Integer.toString(x)+","
 		+Integer.toString(y+1)+","
@@ -46,7 +46,7 @@ public void testInitialMoveUp(){
 	@Test
 	public void testInitialMoveLeft(){
 			
-			drone= new Drone();
+		drone= new Drone(30,0,30);
 			String expectedCoordinates="("
 					+Integer.toString(x-1)+","
 			+Integer.toString(y)+","
@@ -58,7 +58,7 @@ public void testInitialMoveUp(){
 	@Test
 	public void testInitialMoveRight(){
 			
-			drone= new Drone();
+		drone= new Drone(30,0,30);
 			String expectedCoordinates="("
 					+Integer.toString(x+1)+","
 			+Integer.toString(y)+","
@@ -69,7 +69,7 @@ public void testInitialMoveUp(){
 	@Test
 	public void testInitialMoveBack(){
 			
-			drone= new Drone();
+		drone= new Drone(30,0,30);
 			String expectedCoordinates="("
 					+Integer.toString(x)+","
 			+Integer.toString(y)+","
@@ -80,7 +80,7 @@ public void testInitialMoveUp(){
 	@Test
 	public void testInitialMoveForth(){
 			
-			drone= new Drone();
+		drone= new Drone(30,0,30);
 			String expectedCoordinates="("
 					+Integer.toString(x)+","
 			+Integer.toString(y)+","

@@ -64,3 +64,10 @@ UnitTestSessionAction 1495737760617 DroneTest FAIL
 RefactoringAction 1495737796601 Drone.java ADD Drone(int, int, int) METHOD
 CompilationAction 1495737828893 DroneTest.java
 EditAction 1495737829338 DroneTest.java 1897 7 20 7
+CompilationAction 1495737832992 DroneTest.java
+CompilationAction 1495737856182 DroneTest.java
+CompilationAction 1495737856587 DroneTest.java
+UnitTestCaseAction 1495737859072 DroneTest.java FAIL
+UnitTestSessionAction 1495737859074 DroneTest FAIL
+UnitTestCaseAction 1495737931009 DroneTest.java OK
+UnitTestSessionAction 1495737931011 DroneTest OK
