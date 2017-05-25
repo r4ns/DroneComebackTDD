@@ -2,27 +2,33 @@ package drone;
 
 public class Drone implements StandardDrone{
 
+	int x=30;
+	int y=0;
+	int z=30;
+	
 	@Override
 	public String moveUp() {
-		// TODO Auto-generated method stub
-		return null;
+		y++;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveDown() {
-		// TODO Auto-generated method stub
-		return null;
+		y--;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveLeft() {
 		// TODO Auto-generated method stub
-		return null;
+		x--;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveRight() {
 		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -41,7 +47,7 @@ public class Drone implements StandardDrone{
 	@Override
 	public String getFormatedCoordinates() {
 		// TODO Auto-generated method stub
-		return null;
+		return "("+x+","+y+","+z+")";
 	}
 
 }

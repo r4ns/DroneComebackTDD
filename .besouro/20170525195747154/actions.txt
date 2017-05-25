@@ -1,0 +1,8 @@
+FileOpenedAction 1495735067757 DroneTest.java 704 2 6 2
+UnitTestCaseAction 1495735108031 DroneTest.java OK
+UnitTestSessionAction 1495735108041 DroneTest OK
+RefactoringAction 1495735115077 DroneTest.java ADD void testInitialDown()/2 METHOD
+RefactoringAction 1495735120104 DroneTest.java RENAME testInitialDown()/2=>void testInitialMoveDown() METHOD
+RefactoringAction 1495735126624 DroneTest.java RENAME testInitialDown()=>void testInitial() METHOD
+RefactoringAction 1495735129165 DroneTest.java RENAME testInitial()=>void testInitialMoveLeft() METHOD
+EditAction 1495735173539 DroneTest.java 980 3 9 3
