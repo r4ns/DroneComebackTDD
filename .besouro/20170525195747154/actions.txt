@@ -27,3 +27,28 @@ RefactoringAction 1495735856497 DroneTest.java RENAME testInitialMoveUp()/2=>voi
 RefactoringAction 1495735864541 DroneTest.java REMOVE testConstructor() METHOD
 FileOpenedAction 1495736008058 FlySpaceTest.java 52 0 0 0
 EditAction 1495736017950 DroneTest.java 1796 6 18 6
+UnitTestCaseAction 1495736022503 DroneTest.java OK
+UnitTestSessionAction 1495736022505 DroneTest OK
+FileOpenedAction 1495736037824 DroneException.java 54 0 0 0
+FileOpenedAction 1495736039800 FlySpace.java 48 0 0 0
+FileOpenedAction 1495736224848 Cube.java 44 0 0 0
+RefactoringAction 1495736309167 DroneTest.java ADD void testInitialMoveUp()/2 METHOD
+RefactoringAction 1495736312717 DroneTest.java RENAME testInitialMoveUp()/2=>void test() METHOD
+RefactoringAction 1495736321301 DroneTest.java RENAME test()=>void testConstr() METHOD
+RefactoringAction 1495736328343 DroneTest.java RENAME testConstr()=>void testConstructor() METHOD
+RefactoringAction 1495736491040 DroneTest.java ADD void testConstructor()/2 METHOD
+RefactoringAction 1495736493068 DroneTest.java RENAME testConstructor()/2=>void testConstructor1() METHOD
+RefactoringAction 1495736496110 DroneTest.java RENAME testConstructor()=>void testConstructor2() METHOD
+RefactoringAction 1495736508998 Drone.java ADD Drone() METHOD
+RefactoringAction 1495736515596 Drone.java ADD Drone()/2 METHOD
+CompilationAction 1495736650352 Drone.java
+CompilationAction 1495736650353 Drone.java
+CompilationAction 1495736650354 Drone.java
+CompilationAction 1495736650355 Drone.java
+CompilationAction 1495736650356 Drone.java
+CompilationAction 1495736650357 Drone.java
+RefactoringAction 1495736659794 Drone.java REMOVE Drone() METHOD
+RefactoringAction 1495736659796 Drone.java REMOVE Drone()/2 METHOD
+FileOpenedAction 1495736663799 StandardDrone.java 330 7 0 0
+RefactoringAction 1495736684244 DroneTest.java RENAME testConstructor2()=><initializer /1> null
+EditAction 1495737054932 Cube.java 47 0 0 0

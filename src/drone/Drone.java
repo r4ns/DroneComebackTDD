@@ -6,12 +6,21 @@ public class Drone implements StandardDrone{
 	int y=0;
 	int z=30;
 	
-	
-	
 	@Override
 	public String moveUp() {
-		y++;
-		return getFormatedCoordinates();
+		if ((x>10 &&x<40) && (z>10 &&z<40) && y<10){
+ 			y++;
+ 			 			return getFormatedCoordinates();
+ 			 		} else if ((x>10 &&x<40) && (z>10 &&z<40) && y>=40){
+ 			 			y++;
+ 			 			return getFormatedCoordinates();
+ 			 		} else if (((x>=40 || x<= 10) || (z>=40 || z<= 10))  && y< 50){
+ 			 			y++;
+ 			 			return getFormatedCoordinates();
+ 			 		} else {
+ 			 			
+ 			 			return getFormatedCoordinates();
+ 			 		}
 	}
 
 	@Override
