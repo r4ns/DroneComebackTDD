@@ -15,45 +15,113 @@ public class Drone implements StandardDrone{
 	}
 
 	@Override
-	public String moveUp() {
-		
-		return null;
+	public String moveUp(){
+		if ((coordinates[0]>10 &&coordinates[0]<40) && (coordinates[2]>10 &&coordinates[2]<40) && coordinates[1]<10){
+ 			coordinates[1]++;
+ 			return getFormatedCoordinates();
+ 			 		
+		} else if ((coordinates[0]>10 &&coordinates[0]<40) && (coordinates[2]>10 &&coordinates[2]<40) && coordinates[1]>=40){
+ 			 coordinates[1]++;
+ 			 return getFormatedCoordinates();
+ 			 		
+		} else if (((coordinates[0]>=40 || coordinates[0]<= 10) || (coordinates[2]>=40 || coordinates[2]<= 10))  && coordinates[1]< 50){
+ 			 coordinates[1]++;
+ 			 return getFormatedCoordinates();
+ 			 		
+		} else {
+ 			 return getFormatedCoordinates();
+ 		}
+	
 	}
 
 	@Override
 	public String moveDown() {
-		// TODO Auto-generated method stub
-		return null;
+		if ((coordinates[0]>10 &&coordinates[0]<40) && (coordinates[2]>10 &&coordinates[2]<40) && coordinates[1]>0 && coordinates[1]<=10){
+			coordinates[1]--;
+			return getFormatedCoordinates();
+		} else if ((coordinates[0]>10 &&coordinates[0]<40) && (coordinates[2]>10 && coordinates[2]<40) && (coordinates[1]<=50 && coordinates[1]>40)){
+			coordinates[1]--;
+			return getFormatedCoordinates();
+		} else if (((coordinates[0]>=40 || coordinates[0]<= 10) || (coordinates[2]>=40 || coordinates[2]<= 10))  && coordinates[1]>0){
+			coordinates[1]--;
+			return getFormatedCoordinates();
+			 			
+		} else {
+			 			
+			return getFormatedCoordinates();
+		}
+	
 	}
 
 	@Override
 	public String moveLeft() {
-		// TODO Auto-generated method stub
-		return null;
+		 if ((coordinates[1]>10 &&coordinates[1]<40) && (coordinates[2]>10 &&coordinates[2]<40) && (coordinates[0]<=10 && coordinates[0]>0)){
+	 			coordinates[0]--;
+	 			return getFormatedCoordinates();
+	 	} else if ((coordinates[1]>10 &&coordinates[1]<40) && (coordinates[2]>10 && coordinates[2]<40) && (coordinates[0]>40 && coordinates[0]<=50)){
+	 			 coordinates[0]--;
+	 			 return getFormatedCoordinates();
+	 	} else if (((coordinates[1]>=40 || coordinates[1]<= 10) || (coordinates[2]>=40 || coordinates[2]<= 10))  && coordinates[0]>0){
+	 			 coordinates[0]--;
+	 			 return getFormatedCoordinates();
+	 	} else {
+	 			 return getFormatedCoordinates();
+	 	}
 	}
 
 	@Override
 	public String moveRight() {
-		// TODO Auto-generated method stub
-		return null;
+		 if ((coordinates[1]>10 &&coordinates[1]<40) && (coordinates[2]>10 &&coordinates[2]<40) && coordinates[0]<10){
+				coordinates[0]++;
+				 return getFormatedCoordinates();
+		} else if ((coordinates[1]>10 &&coordinates[1]<40) && (coordinates[2]>10 &&coordinates[2]<40) && (coordinates[0]>=40 && coordinates[0]<50)){
+				 coordinates[0]++;
+				 return getFormatedCoordinates();
+		} else if (((coordinates[1]>=40 || coordinates[1]<= 10) || (coordinates[2]>=40 || coordinates[2]<= 10))  && coordinates[0]<50){
+				 coordinates[0]++;
+				 return getFormatedCoordinates();
+		} else {
+				 return getFormatedCoordinates();
+		}
+		
 	}
 
 	@Override
 	public String moveBack() {
-		// TODO Auto-generated method stub
-		return null;
+		if ((coordinates[0]>10 &&coordinates[0]<40) && (coordinates[1]>10 &&coordinates[1]<40) && coordinates[2]<10){
+ 			coordinates[2]++;
+ 			return getFormatedCoordinates();
+ 		} else if ((coordinates[0]>10 &&coordinates[0]<40) && (coordinates[1]>10 &&coordinates[1]<40) && (coordinates[2]>=40 && coordinates[2]<50)){
+ 			 coordinates[2]++;
+ 			 return getFormatedCoordinates();
+ 		} else if (((coordinates[0]>=40 || coordinates[0]<= 10) || (coordinates[1]>=40 || coordinates[1]<= 10))  && coordinates[2]<50){
+ 			 coordinates[2]++;
+ 			 return getFormatedCoordinates();
+ 		} else {
+ 			 return getFormatedCoordinates();
+ 		}
 	}
 
 	@Override
 	public String moveForth() {
-		// TODO Auto-generated method stub
-		return null;
+		if ((coordinates[0]>10 &&coordinates[0]<40) && (coordinates[1]>10 &&coordinates[1]<40) && (coordinates[2]>0 && coordinates[2]<=10)){
+ 			coordinates[2]--;
+ 			return getFormatedCoordinates();
+ 		} else if ((coordinates[0]>10 &&coordinates[0]<40) && (coordinates[1]>10 && coordinates[1]<40) && coordinates[2]>40){
+ 			coordinates[2]--;
+ 			return getFormatedCoordinates();
+ 	    } else if (((coordinates[0]>=40 || coordinates[0]<= 10) || (coordinates[1]>=40 || coordinates[1]<= 10))  && coordinates[2]>0){
+ 			coordinates[2]--;
+ 			return getFormatedCoordinates();
+ 		} else {
+ 			return getFormatedCoordinates();
+ 		}
+		
 	}
 
 	@Override
 	public String getFormatedCoordinates() {
-		// TODO Auto-generated method stub
-		return null;
+		return "("+coordinates[0]+","+coordinates[1]+","+coordinates[2]+")";
 	}
 
 }
