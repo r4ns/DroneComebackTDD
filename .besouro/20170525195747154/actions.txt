@@ -11,3 +11,8 @@ UnitTestSessionAction 1495735179723 DroneTest OK
 RefactoringAction 1495735186313 DroneTest.java ADD void testInitialMoveLeft()/2 METHOD
 RefactoringAction 1495735190348 DroneTest.java RENAME testInitialMoveLeft()/2=>void testInitialMoveRight() METHOD
 EditAction 1495735197827 DroneTest.java 1254 4 12 4
+RefactoringAction 1495735228079 DroneTest.java ADD void testInitialMoveRight()/2 METHOD
+RefactoringAction 1495735232118 DroneTest.java RENAME testInitialMoveRight()/2=>void testInitialMoveBack() METHOD
+RefactoringAction 1495735344196 DroneTest.java ADD void testInitialMoveBack()/2 METHOD
+RefactoringAction 1495735354274 DroneTest.java RENAME testInitialMoveBack()/2=>void testInitialMoveForth() METHOD
+EditAction 1495735363324 DroneTest.java 1794 6 18 6

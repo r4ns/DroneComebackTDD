@@ -59,5 +59,27 @@ public void testInitialMoveUp(){
 			assertEquals(expectedCoordinates,drone.moveRight());
 			
 		}
+	@Test
+	public void testInitialMoveBack(){
+			
+			drone= new Drone();
+			String expectedCoordinates="("
+					+Integer.toString(x)+","
+			+Integer.toString(y)+","
+			+Integer.toString(z+1) + ")";
+			assertEquals(expectedCoordinates,drone.moveBack());
+			
+		}
+	@Test
+	public void testInitialMoveForth(){
+			
+			drone= new Drone();
+			String expectedCoordinates="("
+					+Integer.toString(x)+","
+			+Integer.toString(y)+","
+			+Integer.toString(z-1) + ")";
+			assertEquals(expectedCoordinates,drone.moveForth());
+			
+		}
 	
 }
