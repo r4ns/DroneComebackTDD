@@ -1,11 +1,23 @@
 package drone;
 
 public class Drone implements StandardDrone{
-
+	
+	private int x;
+	private int y;
+	private int z;
+	
+	public Drone(int x, int y, int z){
+		this.x=x;
+		this.y=y;
+		this.z=z;
+	}
+	
+	
+	
 	@Override
 	public String moveUp() {
-		// TODO Auto-generated method stub
-		return null;
+		x+=1;
+		return getFormatedCoordinates();
 	}
 
 	@Override
@@ -41,7 +53,7 @@ public class Drone implements StandardDrone{
 	@Override
 	public String getFormatedCoordinates() {
 		// TODO Auto-generated method stub
-		return null;
+		return "("+x+","+y+","+z+")---->(";
 	}
 
 }
