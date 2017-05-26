@@ -1,29 +1,59 @@
 package drone;
 
 public class Drone implements StandardDrone{
+	private int x;
+	private int y;
+	private int z;
+	private FlySpace fs;
+	
+	
+	public Drone(int x, int y, int z){
+		this.x=x;
+		this.y=y;
+		this.z=z;
+	}
+	public Drone(int x, int y, int z, FlySpace fs){
+		this.x=x;
+		this.y=y;
+		this.z=z;
+		this.fs=fs;
+	}
 
 	@Override
 	public String moveUp() {
-		// TODO Auto-generated method stub
-		return null;
+		if(y + 1 <= fs.getVecaKocka().getMaxCoordinates()[1]&& y+1 <=fs.getManjaKocka().getMinCoordinates()[1])
+		{
+			y += 1;			
+		}
+		return getFormatedCoordinates();
+		
 	}
 
 	@Override
 	public String moveDown() {
-		// TODO Auto-generated method stub
-		return null;
+		if((y - 1 >= fs.getVecaKocka().getMinCoordinates()[1]&& y-1<=fs.getManjaKocka().getMinCoordinates()[1])|| (y-1 >=fs.getManjaKocka().getMaxCoordinates()[1]&&y-1<=fs.getVecaKocka().getMaxCoordinates()[1]))
+		{
+			y -= 1;			
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveLeft() {
-		// TODO Auto-generated method stub
-		return null;
+		if((x - 1 >= fs.getVecaKocka().getMinCoordinates()[0]&& x-1<=fs.getManjaKocka().getMinCoordinates()[0])|| (x-1 >=fs.getManjaKocka().getMaxCoordinates()[0]&&x-1<=fs.getVecaKocka().getMaxCoordinates()[0]))
+		{
+			x -= 1;			
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveRight() {
-		// TODO Auto-generated method stub
-		return null;
+		if((x + 1 >= fs.getVecaKocka().getMinCoordinates()[0]&& x+1<=fs.getManjaKocka().getMinCoordinates()[0])|| (x+1 >=fs.getManjaKocka().getMaxCoordinates()[0]&&x+1<=fs.getVecaKocka().getMaxCoordinates()[0]))
+		{
+			x += 1;			
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
@@ -40,8 +70,7 @@ public class Drone implements StandardDrone{
 
 	@Override
 	public String getFormatedCoordinates() {
-		// TODO Auto-generated method stub
-		return null;
+		return "("+x+","+y+","+z+")";
 	}
 
 }
