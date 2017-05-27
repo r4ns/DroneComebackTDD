@@ -12,12 +12,17 @@ public class Drone implements StandardDrone{
 		this.y=y;
 		this.z=z;
 	}
-	public Drone(int x, int y, int z, FlySpace fs){
+	public Drone(int x, int y, int z, FlySpace fs) throws DroneException{
+		if(fs.getVecaKocka().getMaxCoordinates()[0]<x ||fs.getVecaKocka().getMaxCoordinates()[1]<y||fs.getVecaKocka().getMaxCoordinates()[2]<z ||fs.getVecaKocka().getMinCoordinates()[1]>y)
+			throw new DroneException();
+		else if((fs.getManjaKocka().getMinCoordinates()[1]<y && fs.getManjaKocka().getMaxCoordinates()[1]>y))
+			throw new DroneException();
 		this.x=x;
 		this.y=y;
 		this.z=z;
 		this.fs=fs;
 	}
+	
 
 	@Override
 	public String moveUp() {
@@ -58,14 +63,20 @@ public class Drone implements StandardDrone{
 
 	@Override
 	public String moveBack() {
-		// TODO Auto-generated method stub
-		return null;
+		if((z - 1 >= fs.getVecaKocka().getMinCoordinates()[2]&& z-1<=fs.getManjaKocka().getMinCoordinates()[2])|| (z-1 >=fs.getManjaKocka().getMaxCoordinates()[2]&&z-1<=fs.getVecaKocka().getMaxCoordinates()[2]))
+		{
+			z -= 1;			
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveForth() {
-		// TODO Auto-generated method stub
-		return null;
+		if((z + 1 >= fs.getVecaKocka().getMinCoordinates()[2]&& z+1<=fs.getManjaKocka().getMinCoordinates()[2])|| (z+1 >=fs.getManjaKocka().getMaxCoordinates()[2]&&z+1<=fs.getVecaKocka().getMaxCoordinates()[2]))
+		{
+			z += 1;			
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
