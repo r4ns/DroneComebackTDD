@@ -1,27 +1,29 @@
 package drone;
 
 public class Cube {
-	private int [] startCoordinates;
+	private int [] minCoordinates;
+	private int [] maxCoordinates;
 	private int duzinaStranice;
 	
 	public Cube(int [] startCoordinates, int duzinaStranice){
-		this.startCoordinates=startCoordinates;
+		this.minCoordinates= new int []{startCoordinates[0],startCoordinates[1],startCoordinates[2]};
 		this.duzinaStranice=duzinaStranice;
+		this.maxCoordinates= new int []{startCoordinates[0]+duzinaStranice,startCoordinates[1]+duzinaStranice,startCoordinates[2]+duzinaStranice};
 	}
 	
 	public String toString(){
-		return "Start coordinates:({"+this.startCoordinates[0]+", "+
-				this.startCoordinates[1]+", "+
-				this.startCoordinates[2]+"}, "
-				+this.duzinaStranice+")";
+		return "("+this.minCoordinates[0]+", "+
+				this.minCoordinates[1]+", "+
+				this.minCoordinates[2]+"), "
+				+this.duzinaStranice;
 	}
 
-	public int[] getStartCoordinates() {
-		return startCoordinates;
+	public int[] getMinCoordinates() {
+		return minCoordinates;
 	}
 
-	public void setStartCoordinates(int[] startCoordinates) {
-		this.startCoordinates = startCoordinates;
+	public void setMinCoordinates(int[] minCoordinates) {
+		this.minCoordinates =minCoordinates;
 	}
 
 	public int getDuzinaStranice() {
@@ -30,6 +32,14 @@ public class Cube {
 
 	public void setDuzinaStranice(int duzinaStranice) {
 		this.duzinaStranice = duzinaStranice;
+	}
+
+	public int[] getMaxCoordinates() {
+		return maxCoordinates;
+	}
+
+	public void setMaxCoordinates(int[] maxCoordinates) {
+		this.maxCoordinates = maxCoordinates;
 	}
 	
 	
