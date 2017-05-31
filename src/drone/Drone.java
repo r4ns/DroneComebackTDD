@@ -2,7 +2,7 @@ package drone;
 
 public class Drone implements StandardDrone{
 	
-	private int [] startCoordinates;
+	private int [] startCoordinates={30,0,30};
 	private int [] boundaries;
 	public Drone()
 	{
@@ -17,44 +17,107 @@ public class Drone implements StandardDrone{
 
 	@Override
 	public String moveUp() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if (startCoordinates[1]>=50  || (startCoordinates[0]>=10 && startCoordinates[0]<=40 && startCoordinates[1]>=10 && startCoordinates[1]<=40 && startCoordinates[2]>=10 && startCoordinates[2]<=40))
+		{
+			
+		}else 
+		{
+			startCoordinates[1]++;
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveDown() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if (startCoordinates[1]<=0  || (startCoordinates[0]>=10 && startCoordinates[0]<=40 && startCoordinates[1]>=10 && startCoordinates[1]<=40 && startCoordinates[2]>=10 && startCoordinates[2]<=40))
+		{
+			
+		}
+		else
+		{
+			startCoordinates[1]--;
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveLeft() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if (startCoordinates[0]<=0  || (startCoordinates[0]>=10 && startCoordinates[0]<=40 && startCoordinates[1]>=10 && startCoordinates[1]<=40 && startCoordinates[2]>=10 && startCoordinates[2]<=40))
+		{
+			
+		}
+		else
+		{
+			startCoordinates[0]--;
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveRight() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if (startCoordinates[0]>=50  || (startCoordinates[0]>=10 && startCoordinates[0]<40 && startCoordinates[1]>10 && startCoordinates[1]<40 && startCoordinates[2]>10 && startCoordinates[2]<40))
+		{
+			
+		}
+		else 
+		{
+			startCoordinates[0]++;
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveBack() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if (startCoordinates[2]<=0  || (startCoordinates[0]>=10 && startCoordinates[0]<40 && startCoordinates[1]>=10 && startCoordinates[1]<=40 && startCoordinates[2]>=10 && startCoordinates[2]<=40))
+		{
+			
+		}
+		else
+		{
+			startCoordinates[2]--;
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveForth() {
-		// TODO Auto-generated method stub
-		return null;
+		if (startCoordinates[2]>=50  || (startCoordinates[0]>=10 && startCoordinates[0]<=40 && startCoordinates[1]>=10 && startCoordinates[1]<=40 && startCoordinates[2]>=10 && startCoordinates[2]<=40))
+		{
+			
+		} 
+		else
+		{
+			startCoordinates[2]++;
+		}
+		
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String getFormatedCoordinates() {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return "Dron position:"  + "(" + Integer.toString(startCoordinates[0]) + "," + Integer.toString(startCoordinates[1])  +  "," + Integer.toString(startCoordinates[2]) + ")";
+	}
+
+	public int[] getStartCoordinates() {
+		return startCoordinates;
+	}
+
+	public int[] getBoundaries() {
+		return boundaries;
+	}
+
+	public void setStartCoordinates(int[] startCoordinates) {
+		this.startCoordinates = startCoordinates;
+	}
+
+	public void setBoundaries(int[] boundaries) {
+		this.boundaries = boundaries;
 	}
 
 }
