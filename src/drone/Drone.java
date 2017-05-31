@@ -1,55 +1,117 @@
 package drone;
 
 public class Drone implements StandardDrone{
-	int x = 30;
-	int y = 0;
-	int z = 30;
-	public int[] droneCoordinates = {x,y,z};
-	public Drone(){
-		this.droneCoordinates = droneCoordinates;
+	private int droneCoordinates[];
+	protected FlySpace flySpace;
+	
+	public Drone(Cube outerBoundaries, Cube innerBoundaries, int[] droneStartCoordinates)
+	{
+	flySpace = new FlySpace(outerBoundaries, innerBoundaries);
+	droneCoordinates = droneStartCoordinates;
 	}
+	
+	
 	
 	@Override
 	public String getFormatedCoordinates() {
-		return "("+droneCoordinates[0] +", "+ droneCoordinates[1] +", "+ droneCoordinates[2] + ")";
+		return "Drone position: (" + Integer.toString(droneCoordinates[0]) + ", "
+								   + Integer.toString(droneCoordinates[1]) + ", " 
+								   + Integer.toString(droneCoordinates[2]) + ")"; 
 	}
 	
 	@Override
 	public String moveUp() {
-		droneCoordinates[1]++;
-		return getFormatedCoordinates();
+		if (droneCoordinates[0] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[0] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] < flySpace.getInnerBoundaries().getMaxCoordinates()[2] && droneCoordinates[2] > flySpace.getInnerBoundaries().getMinCoordinates()[2] && droneCoordinates[1] < flySpace.getInnerBoundaries().getMinCoordinates()[1]){
+			droneCoordinates[1]++;
+			return getFormatedCoordinates();
+		} else if (droneCoordinates[0] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[0] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] < flySpace.getInnerBoundaries().getMaxCoordinates()[2] && droneCoordinates[2] > flySpace.getInnerBoundaries().getMinCoordinates()[2] && droneCoordinates[1] < flySpace.getOuterBoundaries().getMaxCoordinates()[1] && droneCoordinates[1] >= flySpace.getInnerBoundaries().getMaxCoordinates()[1]){
+			droneCoordinates[1]++;;
+			return getFormatedCoordinates();
+		} else if (((droneCoordinates[0] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[0] <= flySpace.getInnerBoundaries().getMinCoordinates()[0]) || (droneCoordinates[2] >= flySpace.getInnerBoundaries().getMaxCoordinates()[2] || droneCoordinates[2] <= flySpace.getInnerBoundaries().getMinCoordinates()[2])) && droneCoordinates[1] < flySpace.getOuterBoundaries().getMaxCoordinates()[1]){
+			droneCoordinates[1]++;;
+			return getFormatedCoordinates();
+		} else {
+			return getFormatedCoordinates();
+		}
 	}
 
 	@Override
 	public String moveDown() {
-		droneCoordinates[1]--;
-		return getFormatedCoordinates();
+		if (droneCoordinates[0] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[0] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] < 40 && droneCoordinates[2] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[1] > flySpace.getOuterBoundaries().getMinCoordinates()[0]){
+		 droneCoordinates[1]--;
+			 return getFormatedCoordinates();
+		} else if (droneCoordinates[0] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[0] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[2] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[1] <= flySpace.getOuterBoundaries().getMaxCoordinates()[0] && droneCoordinates[1] > flySpace.getInnerBoundaries().getMaxCoordinates()[0]){
+			 droneCoordinates[1]--;
+			 return getFormatedCoordinates();
+		} else if (((droneCoordinates[0] >=flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[0] <= flySpace.getInnerBoundaries().getMinCoordinates()[0]) || (droneCoordinates[2] >=flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[2] <= flySpace.getInnerBoundaries().getMinCoordinates()[0])) && droneCoordinates[1] > flySpace.getOuterBoundaries().getMinCoordinates()[0]){
+			 droneCoordinates[1]--;
+			return getFormatedCoordinates();
+		} else {
+			return getFormatedCoordinates();
+		}
 	}
 
 	@Override
 	public String moveLeft() {
-		droneCoordinates[0]--;
-		return getFormatedCoordinates();
+		if (droneCoordinates[1] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[1] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[2] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[0] > flySpace.getInnerBoundaries().getMaxCoordinates()[0]){
+			droneCoordinates[0]--;
+			return getFormatedCoordinates();
+		} else if (droneCoordinates[1] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[1] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[2] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[0] > flySpace.getOuterBoundaries().getMinCoordinates()[0] && droneCoordinates[0] <= flySpace.getInnerBoundaries().getMinCoordinates()[0]){
+			droneCoordinates[0]--;
+			return getFormatedCoordinates();
+		} else if (((droneCoordinates[1] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[1] <= flySpace.getInnerBoundaries().getMinCoordinates()[0]) || (droneCoordinates[2] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[2] <= flySpace.getInnerBoundaries().getMinCoordinates()[0])) && droneCoordinates[0] > flySpace.getOuterBoundaries().getMinCoordinates()[0]) {
+			droneCoordinates[0]--;
+			return getFormatedCoordinates();
+		} else {
+			return getFormatedCoordinates();
+		}
 	}
 
 	@Override
 	public String moveRight() {
-		droneCoordinates[0]++;
-		return getFormatedCoordinates();
+		if (droneCoordinates[1] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[1] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[2] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[0] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[0] < flySpace.getOuterBoundaries().getMaxCoordinates()[0]){
+			droneCoordinates[0]++;
+			return getFormatedCoordinates();
+		} else if (droneCoordinates[1] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[1] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[2] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[1] < flySpace.getInnerBoundaries().getMinCoordinates()[0]){
+			droneCoordinates[0]++;
+			return getFormatedCoordinates();
+		} else if (((droneCoordinates[1] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[1] <= flySpace.getInnerBoundaries().getMinCoordinates()[0]) || (droneCoordinates[2] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[2] <= flySpace.getInnerBoundaries().getMinCoordinates()[0])) && droneCoordinates[1] < flySpace.getOuterBoundaries().getMaxCoordinates()[0]) {
+			droneCoordinates[0]++;
+			return getFormatedCoordinates();
+		} else {
+			return getFormatedCoordinates();
+		}
 	}
 
 	@Override
 	public String moveBack() {
-		droneCoordinates[2]++;
-		return getFormatedCoordinates();
+		if (droneCoordinates[1] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[1] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[0] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[0] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] < flySpace.getInnerBoundaries().getMinCoordinates()[0]){
+			droneCoordinates[2]++;
+			return getFormatedCoordinates();
+		} else if (droneCoordinates[1] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[1] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[0] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[0] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[2] < flySpace.getOuterBoundaries().getMaxCoordinates()[0]) {
+			droneCoordinates[2]++;
+			return getFormatedCoordinates();
+		} else if (((droneCoordinates[1] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[1] <= flySpace.getInnerBoundaries().getMinCoordinates()[0]) || (droneCoordinates[0] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[0] <= flySpace.getInnerBoundaries().getMinCoordinates()[0])) && droneCoordinates[2] < flySpace.getOuterBoundaries().getMaxCoordinates()[0]) {
+			droneCoordinates[2]++;
+			return getFormatedCoordinates();
+		} else {
+			return getFormatedCoordinates();
+		}
 	}
 
 	@Override
 	public String moveForth() {
-		droneCoordinates[2]--;
-		return getFormatedCoordinates();
+		if (droneCoordinates[1] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[1] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[0] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[0] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] > flySpace.getOuterBoundaries().getMinCoordinates()[0] && droneCoordinates[2] <= flySpace.getInnerBoundaries().getMinCoordinates()[0]){
+			droneCoordinates[2]--;
+			return getFormatedCoordinates();
+		} else if (droneCoordinates[1] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[1] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[0] < flySpace.getInnerBoundaries().getMaxCoordinates()[0] && droneCoordinates[0] > flySpace.getInnerBoundaries().getMinCoordinates()[0] && droneCoordinates[2] > flySpace.getInnerBoundaries().getMaxCoordinates()[0]) {
+			droneCoordinates[2]--;
+			return getFormatedCoordinates();
+		} else if (((droneCoordinates[1] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[1] <= flySpace.getInnerBoundaries().getMinCoordinates()[0]) || (droneCoordinates[0] >= flySpace.getInnerBoundaries().getMaxCoordinates()[0] || droneCoordinates[0] <= flySpace.getInnerBoundaries().getMinCoordinates()[0])) && droneCoordinates[2] > flySpace.getOuterBoundaries().getMinCoordinates()[0]) {
+			droneCoordinates[2]--;
+			return getFormatedCoordinates();
+		} else {
+			return getFormatedCoordinates();
+		}
 	}
-
-	
-
 }

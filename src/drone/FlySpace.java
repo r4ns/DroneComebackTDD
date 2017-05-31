@@ -1,9 +1,32 @@
 package drone;
 
 public class FlySpace {
-	//napravi dva cube-a koji ce biti prostor za kretanje
-	int[] innerBoundaries = {40,40,40};
-	int[] outherBoundaries = {50,50,50};
-	
-	
+
+	protected Cube outerBoundaries;
+	protected Cube innerBoundaries;
+
+	public FlySpace(Cube outerCube, Cube innerCube)
+	{
+		outerBoundaries = outerCube;
+		innerBoundaries = innerCube;
+	}
+	public FlySpace(){
+		
+	}
+
+	public Cube getOuterBoundaries() {
+		return outerBoundaries;
+	}
+
+	public void setOuterBoundaries(Cube outerBoundaries) {
+		this.outerBoundaries = outerBoundaries;
+	}
+
+	public Cube getInnerBoundaries() {
+		return innerBoundaries;
+	}
+
+	public void setInnerBoundaries(Cube innerBoundaries) {
+		this.innerBoundaries = innerBoundaries;
+	}
 }
