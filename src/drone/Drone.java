@@ -2,93 +2,162 @@ package drone;
 
 public class Drone implements StandardDrone{
 
-	int x;
-	int y;
-	int z;
-	FlySpace flySpace;
+	int koordinate[] = new int[3];
+	FlySpace fs;
+	int x,y,z;
 	
-	public Drone()
-	{
+	private int uGranica1 = 0;
+	private int uGranica2 = 0;
+	private int sGranica1 = 0;
+	private int sGranica2 = 0;
+	
+	private int[] cilj = {0, 30, 30};
+	public Drone(int[] koor) throws DroneException{
+		if(koor.length != 3)
+			throw new DroneException();	
+		koordinate = koor;
+		x = koor[0];
+		y = koor[1];
+		z = koor[2];
+	}
+	
+	public Drone(int[] koor, FlySpace fs) throws DroneException{
+		
+		
+		if(koor.length != 3)
+			throw new DroneException();
+		
+		for(int i = 0; i < 3; i++){
+			if(fs.getCubeSpoljasnja().getTackaB()[i] < koor[i] || fs.getCubeUnutrasnja().getTackaA()[i] > koor[i])
+				throw new DroneException();
+		}
+		
+		koordinate = koor;
+		this.fs = fs;
+		x = koor[0];
+		y = koor[1];
+		z = koor[2];
+		
+		sGranica1 = fs.getCubeUnutrasnja().getTackaA()[0];
+		sGranica2 = fs.getCubeUnutrasnja().getTackaB()[0];
+		uGranica1 = fs.getCubeSpoljasnja().getTackaA()[0];
+		uGranica2 = fs.getCubeSpoljasnja().getTackaB()[0];
 		
 	}
 	
-	public Drone (int x, int y, int z, FlySpace flySpaceNew)
-	{
-		setX(x);
-		setY(y);
-		setZ(z);
+	
+	
+	
+	private boolean uIvici(int k){
+		if(k>= sGranica1 && k <=uGranica1 || k>=uGranica2 && k <= sGranica2){
+			return true;
+		}
+		return false;
+	}
+	
+private int pomeri(int k, int i){
 		
-		Cube outter = new Cube(50, new Tacka(0,0,0), new Tacka(50,50,50));
-		Cube inner = new Cube(30, new Tacka(10,10,10), new Tacka (40,40,40));
 		
-		flySpaceNew.setOutterCube(outter);
-		flySpaceNew.setInnerCube(inner);
+		if(k + i == sGranica1 || k + i == sGranica2){
+
+			return k + i;
+		}
+		if(k == sGranica1 && i == -1 || k == sGranica2  && i == 1){
+			return k;
+		}
+		return k + i;
+	}
+	
+	private int pomeriSigurno(int k, int i){
 		
-		setFlySpace(flySpaceNew);
+		
+		if(k + i == sGranica1 || k + i == uGranica1 || k + i == uGranica2 || k + i == sGranica2){
+			return k + i;
+		}
+		if(k == sGranica1 && i == -1 || k == uGranica1  && i == 1|| k == uGranica2  && i == -1|| k == sGranica2  && i == 1){
+			
+			return k;
+		}
+		return k + i;
+	}
+	
+	public boolean stigaoNaCilj(){
+		if(x == cilj[0] && y == cilj[1] && z == cilj[2])
+			return true;
+		else
+			return false;
 	}
 	
 	@Override
 	public String moveUp() {
-
-		// Proveravamo da li je ispod/iznad unutrasnje kocke
-		if ((x >= flySpace.innerCube.getDoleLevoNapred().getX() && x <= flySpace.innerCube.getGoreDesnoNazad().getX())
-				&& (z >= flySpace.innerCube.getDoleLevoNapred().getZ()
-						&& z <= flySpace.innerCube.getGoreDesnoNazad().getZ()))
-		{
-			// Proveravamo da li je ispod unutrasnje kocke
-			if(y < flySpace.innerCube.getDoleLevoNapred().getY())
-			{
-				setY(getY()+1);
-			}
-			// Proveravamo da li je iznad unutrasnje kocke
-			else if (y >= flySpace.innerCube.getGoreDesnoNazad().getY() && y < flySpace.outterCube.getGoreDesnoNazad().getY())
-			{
-				setY(getY()+1);
-			}
+		if(uIvici(x) || uIvici(z)){
+			y = pomeri(y,1);
+		}else if(uIvici(y)){
+			y = pomeriSigurno(y,1);
 		}
-		return "Drone position: (" + getX() + "," + getY() + "," + getZ() + ")";
+		
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveDown() {
-		// TODO Auto-generated method stub
-		return "Drone position: (" + getX() + "," + getY() + "," + getZ() + ")";
+		if(uIvici(x) || uIvici(z)){
+			y = pomeri(y,-1);
+		}else if(uIvici(y)){
+			y = pomeriSigurno(y,-1);
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveLeft() {
-		// TODO Auto-generated method stub
-		return "Drone position: (" + getX() + "," + getY() + "," + getZ() + ")";
+		if(uIvici(y) || uIvici(z)){
+			x = pomeri(x,-1);
+		}else if(uIvici(x)){
+			x = pomeriSigurno(x,-1);
+		}
+		return getFormatedCoordinates();
+
 	}
 
 	@Override
 	public String moveRight() {
-		// TODO Auto-generated method stub
-		return "Drone position: (" + getX() + "," + getY() + "," + getZ() + ")";
+		if(uIvici(y) || uIvici(z)){
+			x = pomeri(x,1);
+		}else if(uIvici(x)){
+			x = pomeriSigurno(x,1);
+		}
+		return getFormatedCoordinates();
+
 	}
 
 	@Override
 	public String moveBack() {
-		// TODO Auto-generated method stub
-		return "Drone position: (" + getX() + "," + getY() + "," + getZ() + ")";
+		if(uIvici(y) || uIvici(x)){
+			z = pomeri(z,1);
+		}else if(uIvici(z)){
+			z = pomeriSigurno(z,1);
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveForth() {
-		// TODO Auto-generated method stub
-		return "Drone position: (" + getX() + "," + getY() + "," + getZ() + ")";
+		if(uIvici(y) || uIvici(x)){
+			z = pomeri(z,-1);
+		}else if(uIvici(z)){
+			z = pomeriSigurno(z,-1);
+		}
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String getFormatedCoordinates() {
-		// TODO Auto-generated method stub
-		return "Drone position: (" + getX() + "," + getY() + "," + getZ() + ")";
+		
+		return "(" + Integer.toString(getX()) + ","
+				+ Integer.toString(getY()) + ","  
+				+ Integer.toString(getZ()) + ")";
 	}
-
-	
-	
-	/////////////////////////////GETTERS AND SETTERS/////////////////////
-	
 	
 	public int getX() {
 		return x;
@@ -114,12 +183,5 @@ public class Drone implements StandardDrone{
 		this.z = z;
 	}
 
-	public FlySpace getFlySpace() {
-		return flySpace;
-	}
-
-	public void setFlySpace(FlySpace flySpace) {
-		this.flySpace = flySpace;
-	}
 
 }

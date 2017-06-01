@@ -1,39 +1,29 @@
 package drone;
 
 public class FlySpace {
-
-	Cube outterCube;
-	Cube innerCube; 
-	
-	public FlySpace()
-	{
-		
+	Cube cubeUnutrasnja, cubeSpoljasnja;
+	public FlySpace(Cube a, Cube b){
+		cubeSpoljasnja = a;
+		cubeUnutrasnja = b;
 	}
 	
-	public FlySpace(Cube outterCube, Cube innerCube)
-	{
-		setOutterCube(outterCube);
-		setInnerCube(innerCube);
+	public String getFlySpaceString(){
+		return "s:"+ cubeSpoljasnja.getCubeStr() + ", u:" + cubeUnutrasnja.getCubeStr();
 	}
 
-	//////////////////GETTERS AND SETTERS////////////////////
-	
-	public Cube getOutterCube() {
-		return outterCube;
+	public Cube getCubeUnutrasnja() {
+		return cubeUnutrasnja;
 	}
 
-
-	public void setOutterCube(Cube outterCube) {
-		this.outterCube = outterCube;
+	public void setCubeUnutrasnja(Cube cubeUnutrasnja) {
+		this.cubeUnutrasnja = cubeUnutrasnja;
 	}
 
-
-	public Cube getInnerCube() {
-		return innerCube;
+	public Cube getCubeSpoljasnja() {
+		return cubeSpoljasnja;
 	}
 
-
-	public void setInnerCube(Cube innerCube) {
-		this.innerCube = innerCube;
+	public void setCubeSpoljasnja(Cube cubeSpoljasnja) {
+		this.cubeSpoljasnja = cubeSpoljasnja;
 	}
 }

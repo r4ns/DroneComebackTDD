@@ -2,47 +2,37 @@ package drone;
 
 public class Cube {
 	
-	int duzinaStranice;
-	Tacka doleLevoNapred;
-	Tacka goreDesnoNazad;
-	
-	public Cube()
-	{}
-	
-	public Cube(int duzinaStranice, Tacka doleLevoNapred, Tacka goreDesnoNazad)
-	{
-		setDuzinaStranice(duzinaStranice);
-		setDoleLevoNapred(doleLevoNapred);
-		setGoreDesnoNazad(goreDesnoNazad);
+	int tackaA [] = new int[3];
+	int tackaB [] = new int[3];
+	public Cube(int[] koor){
+		tackaA = koor;
 	}
 	
+	public Cube(int[] koor, int stranica){
+		tackaA = koor;
+		for(int i = 0; i < 3; i++)
+			tackaB[i] = tackaA[i] + stranica;
+	}
 	
-	
-	
-	//////////////GETTERS AND SETTERS////////////////////////
-	
-	
-	public int getDuzinaStranice() {
-		return duzinaStranice;
+	public int[] getTackaA() {
+		return tackaA;
 	}
 
-	public void setDuzinaStranice(int duzinaStranice) {
-		this.duzinaStranice = duzinaStranice;
+	public String getTackaAStr(){
+		return "(" + tackaA[0] + "," + tackaA[1] + "," + tackaA[2] + ")";
+		
 	}
 
-	public Tacka getDoleLevoNapred() {
-		return doleLevoNapred;
+	public int[] getTackaB() {
+		return tackaB;
+	}
+	
+	public String getTackaBStr(){
+		return "(" + tackaB[0] + "," + tackaB[1] + "," + tackaB[2] + ")";
+		
 	}
 
-	public void setDoleLevoNapred(Tacka doleLevoNapred) {
-		this.doleLevoNapred = doleLevoNapred;
-	}
-
-	public Tacka getGoreDesnoNazad() {
-		return goreDesnoNazad;
-	}
-
-	public void setGoreDesnoNazad(Tacka goredesnoNazad) {
-		this.goreDesnoNazad = goredesnoNazad;
+	public String getCubeStr() {
+		return getTackaAStr() + getTackaBStr();
 	}
 }
