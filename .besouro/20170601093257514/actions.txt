@@ -13,3 +13,13 @@ UnitTestCaseAction 1496302604730 CubeTest.java FAIL
 UnitTestSessionAction 1496302604735 CubeTest FAIL
 FileOpenedAction 1496302675783 DroneException.java 54 0 0 0
 EditAction 1496302707548 DroneException.java 72 0 0 0
+CompilationAction 1496302788380 CubeTest.java
+CompilationAction 1496302788381 FlySpaceTest.java
+UnitTestCaseAction 1496302794524 CubeTest.java FAIL
+UnitTestSessionAction 1496302794524 CubeTest FAIL
+UnitTestCaseAction 1496302812344 CubeTest.java OK
+UnitTestSessionAction 1496302812345 CubeTest OK
+RefactoringAction 1496302826478 FlySpaceTest.java ADD import drone.DroneException IMPORT
+UnitTestCaseAction 1496302829408 FlySpaceTest.java OK
+UnitTestSessionAction 1496302829412 FlySpaceTest OK
+EditAction 1496302892313 FlySpaceTest.java 504 1 3 1

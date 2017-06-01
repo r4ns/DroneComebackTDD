@@ -15,10 +15,15 @@ public class Cube {
 		this.dijagonalnaKoordinata[2] = pocetnaKoordinata[2] + duzinaKocke;
 	}
 	
-	public Cube(int [] pocetnaKoordinata1, int duzinaKocke){
-		this.pocetnaKoordinata = new int [] { pocetnaKoordinata1[0], pocetnaKoordinata1[1], pocetnaKoordinata1[2]};
-		this.duzinaKocke = duzinaKocke;
-		this.dijagonalnaKoordinata = new int [] { pocetnaKoordinata[0] + duzinaKocke, pocetnaKoordinata[1] + duzinaKocke, pocetnaKoordinata[2] + duzinaKocke};
+	public Cube(int [] pocetnaKoordinata1, int duzinaKocke) throws DroneException {
+		if (pocetnaKoordinata1.length == 3) {
+			this.pocetnaKoordinata = new int [] { pocetnaKoordinata1[0], pocetnaKoordinata1[1], pocetnaKoordinata1[2]};
+			this.duzinaKocke = duzinaKocke;
+			this.dijagonalnaKoordinata = new int [] { pocetnaKoordinata[0] + duzinaKocke, pocetnaKoordinata[1] + duzinaKocke, pocetnaKoordinata[2] + duzinaKocke};
+		} else {
+			throw new DroneException();
+		}
+		
 	}
 	
 	@Override

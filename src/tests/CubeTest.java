@@ -11,7 +11,7 @@ import drone.DroneException;
 public class CubeTest {
 	
 	@Test
-	public void testPocetni() {
+	public void testPocetni() throws DroneException {
 		Cube cub = new Cube(new int[]{0,1,0}, 6);
 		String ocekivani = "(0,1,0) --> (6,7,6)";
 		assertEquals(ocekivani, "" + cub);
