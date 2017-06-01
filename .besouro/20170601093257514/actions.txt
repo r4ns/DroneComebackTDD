@@ -106,3 +106,4 @@ UnitTestSessionAction 1496303965818 DroneTest OK
 RefactoringAction 1496303974764 DroneTest.java ADD void test_initialMoveRight()/2 METHOD
 RefactoringAction 1496303992790 DroneTest.java RENAME test_initialMoveRight()/2=>void test_initialMoveBack() METHOD
 EditAction 1496304004563 DroneTest.java 1723 5 20 5
+EditAction 1496304022903 DroneTest.java 1723 5 20 5
