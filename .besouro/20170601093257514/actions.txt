@@ -62,3 +62,10 @@ RefactoringAction 1496303672720 CubeTest.java ADD void testPocetniGore()/2 METHO
 RefactoringAction 1496303677773 CubeTest.java RENAME testPocetniGore()/2=>void testPocetniDesno() METHOD
 EditAction 1496303708000 CubeTest.java 756 3 7 2
 EditAction 1496303720834 CubeTest.java 756 3 7 2
+RefactoringAction 1496303734899 CubeTest.java REMOVE testPocetniDesno() METHOD
+RefactoringAction 1496303737418 CubeTest.java RENAME testPocetniGore()=>void testPocetni() METHOD
+UnitTestCaseAction 1496303739542 CubeTest.java OK
+UnitTestSessionAction 1496303739542 CubeTest.testPocetni OK
+RefactoringAction 1496303751731 DroneTest.java ADD void test_initialMoveUp()/2 METHOD
+RefactoringAction 1496303758247 DroneTest.java RENAME test_initialMoveUp()/2=>void test_initialMoveDown() METHOD
+EditAction 1496303758473 DroneTest.java 802 2 8 2
