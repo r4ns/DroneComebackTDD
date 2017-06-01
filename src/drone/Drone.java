@@ -4,6 +4,16 @@ public class Drone implements StandardDrone{
 	
 	public int[]coordinates={30,0,30};
 	public int[]boundaries;
+	private int x;
+	private int y;
+	private int z;
+	 	
+	public Drone(int x, int y, int z){
+	 		
+	 		this.x=x;
+	 		this.y=y;
+	 		this.z=z;
+	}
 	
 	public Drone(int[]coordinates){
 		this.coordinates=coordinates;
