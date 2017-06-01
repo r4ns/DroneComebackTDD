@@ -61,3 +61,4 @@ UnitTestSessionAction 1496303661491 CubeTest.testPocetniGore OK
 RefactoringAction 1496303672720 CubeTest.java ADD void testPocetniGore()/2 METHOD
 RefactoringAction 1496303677773 CubeTest.java RENAME testPocetniGore()/2=>void testPocetniDesno() METHOD
 EditAction 1496303708000 CubeTest.java 756 3 7 2
+EditAction 1496303720834 CubeTest.java 756 3 7 2

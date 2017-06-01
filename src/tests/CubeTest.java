@@ -12,14 +12,14 @@ public class CubeTest {
 	
 	@Test
 	public void testPocetniGore() throws DroneException {
-		Cube cub = new Cube(new int[]{0,1,0}, 6);
+		Cube cub = new Cube(new int[]{0,1,0}, 1);
 		String ocekivani = "(0,1,0) --> (6,7,6)";
 		assertEquals(ocekivani, "" + cub);
 	}
 	
 	@Test
 	public void testPocetniDesno() throws DroneException {
-		Cube cub = new Cube(new int[]{1,0,0}, 6);
+		Cube cub = new Cube(new int[]{1,0,0}, 1);
 		String ocekivani = "(0,1,0) --> (6,7,6)";
 		assertEquals(ocekivani, "" + cub);
 	}
