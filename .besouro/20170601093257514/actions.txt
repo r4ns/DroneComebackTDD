@@ -88,3 +88,11 @@ RefactoringAction 1496303873984 DroneTest.java RENAME test_initialMoveDown()/2=>
 RefactoringAction 1496303875997 DroneTest.java RENAME test_initialMoveLE()=>void test_initialMoveLeft() METHOD
 EditAction 1496303884865 DroneTest.java 1100 3 12 3
 EditAction 1496303896142 DroneTest.java 1100 3 12 3
+UnitTestCaseAction 1496303899156 DroneTest.java FAIL
+UnitTestSessionAction 1496303899156 DroneTest FAIL
+UnitTestCaseAction 1496303912824 DroneTest.java OK
+UnitTestSessionAction 1496303912825 DroneTest OK
+RefactoringAction 1496303925638 DroneTest.java ADD void test_initialMoveLeft()/2 METHOD
+RefactoringAction 1496303930153 DroneTest.java RENAME test_initialMoveLeft()/2=>void test_initialMove() METHOD
+RefactoringAction 1496303932166 DroneTest.java RENAME test_initialMove()=>void test_initialMoveRight() METHOD
+EditAction 1496303933018 DroneTest.java 1413 4 16 4
