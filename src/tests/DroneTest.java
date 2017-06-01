@@ -4,55 +4,41 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import drone.Cube;
 import drone.Drone;
 
 public class DroneTest {
+	@Test
+	public void test_moveUp(){
+		Drone drone = new Drone(new Cube(new int[]{0, 0, 0}, 50), new Cube(new int[]{10, 10, 10}, 30), new int[]{30, 0, 30});
+		assertEquals("Failed", "Drone position: (30, 1, 30)", drone.moveUp());
+	}
+	@Test
+	public void test_moveDown(){
+		Drone drone = new Drone(new Cube(new int[]{0, 0, 0}, 50), new Cube(new int[]{10, 10, 10}, 30), new int[]{30, 0, 30});
+		assertEquals("Failed", "Drone position: (30, 0, 30)", drone.moveDown());
+	}
+	@Test
+	public void test_moveLeft(){
+		Drone drone = new Drone(new Cube(new int[]{0, 0, 0}, 50), new Cube(new int[]{10, 10, 10}, 30), new int[]{30, 0, 30});
+		assertEquals("Failed", "Drone position: (29, 0, 30)", drone.moveLeft());
+	}
+	@Test
+	public void test_moveRight(){
+		Drone drone = new Drone(new Cube(new int[]{0, 0, 0}, 50), new Cube(new int[]{10, 10, 10}, 30), new int[]{30, 0, 30});
+		assertEquals("Failed", "Drone position: (31, 0, 30)", drone.moveRight());
+	}
+	@Test
+	public void test_moveBack(){
+		Drone drone = new Drone(new Cube(new int[]{0, 0, 0}, 50), new Cube(new int[]{10, 10, 10}, 30), new int[]{30, 0, 30});
+		assertEquals("Failed", "Drone position: (30, 0, 31)", drone.moveBack());
+	}
+	@Test
+	public void test_moveForth(){
+		Drone drone = new Drone(new Cube(new int[]{0, 0, 0}, 50), new Cube(new int[]{10, 10, 10}, 30), new int[]{30, 0, 30});
+		assertEquals("Failed", "Drone position: (30, 0, 29)", drone.moveForth());
+	}
 
-	@Test
-	public void test_DroneStartPosition() {
-		int[] startCoordinates = new int[] {30,0,30};
-		Drone drone = new Drone(startCoordinates);
-		String coordinates = drone.getFormatedCoordinates();
-		assertEquals("(30,0,30)", coordinates);
-	}
-	
-	@Test
-	public void test_DroneInitialMoveUp() {
-		int[] startCoordinates = new int[] {30,0,30};
-		Drone drone = new Drone(startCoordinates);
-		drone.moveUp();
-		String coordinates = drone.getFormatedCoordinates();
-		assertEquals("(30,1,30)", coordinates);
-	}
-	
-	@Test
-	public void test_DroneInitialMoveDown() {
-		int[] startCoordinates = new int[] {30,5,30};
-		Drone drone = new Drone(startCoordinates);
-		drone.moveDown();
-		String coordinates = drone.getFormatedCoordinates();
-		assertEquals("(30,4,30)", coordinates);
-	}
-	
-	
-	@Test
-	public void test_DroneInitialMoveRight() {
-		int[] startCoordinates = new int[] {26,0,30};
-		Drone drone = new Drone(startCoordinates);
-		drone.moveRight();
-		String coordinates = drone.getFormatedCoordinates();
-		assertEquals("(27,0,30)", coordinates);
-	}
-	
-	@Test
-	public void test_DroneInitialMoveBack() {
-		int[] startCoordinates = new int[] {30,0,5};
-		Drone drone = new Drone(startCoordinates);
-		drone.moveBack();
-		String coordinates = drone.getFormatedCoordinates();
-		assertEquals("(30,0,6)", coordinates);
-	}
-	
-
-	
 }
+
+

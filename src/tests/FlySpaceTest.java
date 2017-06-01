@@ -8,13 +8,23 @@ import drone.Cube;
 import drone.FlySpace;
 
 public class FlySpaceTest {
-
+	public FlySpaceTest(int[] maxCoordinates, int[] maxCoordinates2) {
+		// TODO Auto-generated constructor stub
+	}
+		 
+		 
 	@Test
-	public void test_FlySpaceConstructor() {
-		Cube innerCube = new Cube(new int[] {10,10,10},30);
-		Cube outerCube = new Cube(new int[] {0,0,0}, 50);
-		FlySpace space = new FlySpace(innerCube, outerCube);
-		assertNotNull(space);		
+	public void test_konstruktor_flyspace(){
+		FlySpace fs = new FlySpace();
+		assertNotNull(fs);
 	}
 	
+	@Test 
+	public void test_konstruktor_sa_parametrima()
+	{
+		Cube outerBoundaries = new Cube();
+		Cube innerBoundaries = new Cube();
+		FlySpace fs= new FlySpace(outerBoundaries, innerBoundaries);
+		assertNotNull(fs);
+	}
 }
