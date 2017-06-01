@@ -9,7 +9,7 @@ public class FlySpace {
 		innerCube=iner;
 		outerCube=outer;
 	}
-
+	
 	public Cube getInnerCube() {
 		return innerCube;
 	}
