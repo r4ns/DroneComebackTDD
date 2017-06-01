@@ -9,6 +9,7 @@ import drone.Drone;
 import drone.DroneException;
 
 public class DroneTest {
+	
 	@Test 
 	public void test_initialMoveUp() throws DroneException {
 		Drone dr = new Drone(new Cube(new int[]{0,0,0}, 50), new Cube(new int[]{10,10,10}, 30), new int[]{0,0,0});

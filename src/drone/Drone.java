@@ -10,6 +10,7 @@ public class Drone implements StandardDrone{
 		this.koordinateDrona = koordinateDrona;
 	}
 	
+	
 	@Override
 	public String moveUp() {
 		koordinateDrona[1] += 1;

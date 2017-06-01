@@ -5,6 +5,7 @@ public class Cube {
 	private int duzinaKocke;
 	private int dijagonalnaKoordinata[];
 	
+	
 	public Cube() {
 		this.pocetnaKoordinata[0] = 0;
 		this.pocetnaKoordinata[1] = 0;
