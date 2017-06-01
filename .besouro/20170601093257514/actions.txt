@@ -71,3 +71,4 @@ RefactoringAction 1496303758247 DroneTest.java RENAME test_initialMoveUp()/2=>vo
 EditAction 1496303758473 DroneTest.java 802 2 8 2
 EditAction 1496303769282 DroneTest.java 802 2 8 2
 EditAction 1496303772693 DroneTest.java 802 2 8 2
+EditAction 1496303780037 DroneTest.java 804 2 8 2
