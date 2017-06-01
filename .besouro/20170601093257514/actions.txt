@@ -23,3 +23,6 @@ RefactoringAction 1496302826478 FlySpaceTest.java ADD import drone.DroneExceptio
 UnitTestCaseAction 1496302829408 FlySpaceTest.java OK
 UnitTestSessionAction 1496302829412 FlySpaceTest OK
 EditAction 1496302892313 FlySpaceTest.java 504 1 3 1
+FileOpenedAction 1496302898147 DroneTest.java 339 0 0 0
+RefactoringAction 1496302905663 DroneTest.java ADD void test_initialMoveUp() METHOD
+EditAction 1496302931236 DroneTest.java 335 1 4 1
