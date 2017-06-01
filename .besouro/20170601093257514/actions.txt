@@ -6,3 +6,6 @@ RefactoringAction 1496302423896 CubeTest.java RENAME testPogresnoUnetaKocka=>voi
 RefactoringAction 1496302456627 CubeTest.java ADD import drone.DroneException IMPORT
 RefactoringAction 1496302589316 CubeTest.java RENAME testPogresnoUnetaKocka()=>void Cube FIELD
 EditAction 1496302598631 CubeTest.java 527 2 4 1
+CompilationAction 1496302600040 CubeTest.java
+CompilationAction 1496302600041 CubeTest.java
+EditAction 1496302602410 FlySpaceTest.java 448 1 3 1
