@@ -76,3 +76,6 @@ UnitTestCaseAction 1496303781400 DroneTest.java FAIL
 UnitTestSessionAction 1496303781401 DroneTest FAIL
 EditAction 1496303822619 DroneTest.java 802 2 8 2
 EditAction 1496303827385 DroneTest.java 799 2 8 2
+UnitTestCaseAction 1496303829084 DroneTest.java FAIL
+UnitTestSessionAction 1496303829084 DroneTest FAIL
+EditAction 1496303843473 DroneTest.java 794 2 8 2
