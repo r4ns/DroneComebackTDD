@@ -11,11 +11,19 @@ import drone.DroneException;
 public class CubeTest {
 	
 	@Test
-	public void testPocetni() throws DroneException {
+	public void testPocetniGore() throws DroneException {
 		Cube cub = new Cube(new int[]{0,1,0}, 6);
 		String ocekivani = "(0,1,0) --> (6,7,6)";
 		assertEquals(ocekivani, "" + cub);
 	}
+	
+	@Test
+	public void testPocetniDesno() throws DroneException {
+		Cube cub = new Cube(new int[]{1,0,0}, 6);
+		String ocekivani = "(0,1,0) --> (6,7,6)";
+		assertEquals(ocekivani, "" + cub);
+	}
+	
 	
 	@Test (expected = DroneException.class) 
 	public void testPogresnoUnetaKocka() throws DroneException {
