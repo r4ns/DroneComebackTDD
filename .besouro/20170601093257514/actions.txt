@@ -69,3 +69,4 @@ UnitTestSessionAction 1496303739542 CubeTest.testPocetni OK
 RefactoringAction 1496303751731 DroneTest.java ADD void test_initialMoveUp()/2 METHOD
 RefactoringAction 1496303758247 DroneTest.java RENAME test_initialMoveUp()/2=>void test_initialMoveDown() METHOD
 EditAction 1496303758473 DroneTest.java 802 2 8 2
+EditAction 1496303769282 DroneTest.java 802 2 8 2
