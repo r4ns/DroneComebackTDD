@@ -26,3 +26,30 @@ EditAction 1496302892313 FlySpaceTest.java 504 1 3 1
 FileOpenedAction 1496302898147 DroneTest.java 339 0 0 0
 RefactoringAction 1496302905663 DroneTest.java ADD void test_initialMoveUp() METHOD
 EditAction 1496302931236 DroneTest.java 335 1 4 1
+UnitTestCaseAction 1496302934823 DroneTest.java FAIL
+UnitTestSessionAction 1496302934828 DroneTest FAIL
+FileOpenedAction 1496302938251 Drone.java 790 7 7 0
+RefactoringAction 1496302985876 Drone.java ADD prvate FlySpace FIELD
+RefactoringAction 1496302987890 Drone.java REMOVE FlySpace FIELD
+RefactoringAction 1496302990408 Drone.java ADD prvate FlySpace FIELD
+RefactoringAction 1496302993441 Drone.java REMOVE FlySpace FIELD
+RefactoringAction 1496302995451 Drone.java ADD prvate FlySpace FIELD
+RefactoringAction 1496303012004 Drone.java RENAME FlySpace=>FlySpace space FIELD
+RefactoringAction 1496303055590 Drone.java ADD int FIELD
+RefactoringAction 1496303068660 Drone.java RENAME <initializer /1>=>Drone() METHOD
+RefactoringAction 1496303087741 Drone.java RENAME Drone()=>Drone(Cube) METHOD
+RefactoringAction 1496303138815 Drone.java RENAME Drone(Cube)=>Drone(Cube, Cube) METHOD
+RefactoringAction 1496303147849 Drone.java RENAME Drone(Cube, Cube)=>Drone(Cube, Cube, int) METHOD
+RefactoringAction 1496303153866 Drone.java RENAME Drone(Cube, Cube, int)=>Drone(Cube, Cube, int METHOD
+CompilationAction 1496303209956 DroneTest.java
+CompilationAction 1496303383066 Drone.java
+CompilationAction 1496303383066 Drone.java
+CompilationAction 1496303408850 Drone.java
+CompilationAction 1496303408851 Drone.java
+RefactoringAction 1496303442521 DroneTest.java ADD import drone.Cube IMPORT
+FileOpenedAction 1496303487537 CubeTest.java 549 2 4 1
+RefactoringAction 1496303600927 DroneTest.java ADD import drone.DroneException IMPORT
+CompilationAction 1496303606978 DroneTest.java
+UnitTestCaseAction 1496303607265 DroneTest.java FAIL
+UnitTestSessionAction 1496303607265 DroneTest FAIL
+EditAction 1496303637965 Drone.java 1164 8 10 0

@@ -2,10 +2,18 @@ package drone;
 
 public class Drone implements StandardDrone{
 
+	private FlySpace space;
+	private int koordinateDrona [];
+	
+	public Drone (Cube spoljasnja, Cube unutrasnja, int [] koordinateDrona) {
+		space = new FlySpace(spoljasnja, unutrasnja);
+		this.koordinateDrona = koordinateDrona;
+	}
+	
 	@Override
 	public String moveUp() {
-		// TODO Auto-generated method stub
-		return null;
+		koordinateDrona[1] += 1;
+		return getFormatedCoordinates();
 	}
 
 	@Override
@@ -40,8 +48,9 @@ public class Drone implements StandardDrone{
 
 	@Override
 	public String getFormatedCoordinates() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		return "Drone position: (" + Integer.toString(koordinateDrona[0]) + ","
+				+ Integer.toString(koordinateDrona[1]) + ","  
+				+ Integer.toString(koordinateDrona[2]) + ")";	
+		}
 
 }
