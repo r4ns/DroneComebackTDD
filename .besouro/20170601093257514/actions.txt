@@ -87,3 +87,4 @@ RefactoringAction 1496303869970 DroneTest.java ADD void test_initialMoveDown()/2
 RefactoringAction 1496303873984 DroneTest.java RENAME test_initialMoveDown()/2=>void test_initialMoveLE() METHOD
 RefactoringAction 1496303875997 DroneTest.java RENAME test_initialMoveLE()=>void test_initialMoveLeft() METHOD
 EditAction 1496303884865 DroneTest.java 1100 3 12 3
+EditAction 1496303896142 DroneTest.java 1100 3 12 3

@@ -26,7 +26,7 @@ public class DroneTest {
 	}
 	@Test 
 	public void test_initialMoveLeft() throws DroneException {
-		Drone dr = new Drone(new Cube(new int[]{0,0,0}, 50), new Cube(new int[]{10,10,10}, 30), new int[]{0,1,0});
+		Drone dr = new Drone(new Cube(new int[]{0,0,0}, 50), new Cube(new int[]{10,10,10}, 30), new int[]{1,0,0});
 		dr.moveLeft();
 		String expected = "Drone position: (0,0,0)";
 		assertEquals(expected, dr.getFormatedCoordinates());
