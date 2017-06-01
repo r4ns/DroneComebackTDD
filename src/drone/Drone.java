@@ -36,8 +36,8 @@ public class Drone implements StandardDrone{
 
 	@Override
 	public String moveBack() {
-		// TODO Auto-generated method stub
-		return null;
+		koordinateDrona[2] += 1;
+		return getFormatedCoordinates();
 	}
 
 	@Override

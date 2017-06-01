@@ -48,4 +48,12 @@ public class DroneTest {
 		String expected = "Drone position: (0,0,1)";
 		assertEquals(expected, dr.getFormatedCoordinates());
 	}
+	
+	@Test 
+	public void test_initialMoveForth() throws DroneException {
+		Drone dr = new Drone(new Cube(new int[]{0,0,0}, 50), new Cube(new int[]{10,10,10}, 30), new int[]{0,0,1});
+		dr.moveForth();
+		String expected = "Drone position: (0,0,0)";
+		assertEquals(expected, dr.getFormatedCoordinates());
+	}
 }
