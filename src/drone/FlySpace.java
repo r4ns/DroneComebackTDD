@@ -10,6 +10,6 @@ public class FlySpace {
 	}
 	
 	public String getFormatedCoordinates() {
-		return spoljasnjaKocka + " : " + unutrasnjaKocka;
+		return "" + spoljasnjaKocka + " : " + unutrasnjaKocka;
 	}
 }

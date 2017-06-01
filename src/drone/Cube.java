@@ -4,6 +4,7 @@ public class Cube {
 	private int pocetnaKoordinata[];
 	private int duzinaKocke;
 	private int dijagonalnaKoordinata[];
+	
 	public Cube() {
 		this.pocetnaKoordinata[0] = 0;
 		this.pocetnaKoordinata[1] = 0;
@@ -12,16 +13,12 @@ public class Cube {
 		this.dijagonalnaKoordinata[0] = pocetnaKoordinata[0] + duzinaKocke;
 		this.dijagonalnaKoordinata[1] = pocetnaKoordinata[1] + duzinaKocke;
 		this.dijagonalnaKoordinata[2] = pocetnaKoordinata[2] + duzinaKocke;
-		
 	}
-	public Cube(int [] pocetnaKoordinata, int duzinaKocke){
-		this.pocetnaKoordinata[0] = pocetnaKoordinata[0];
-		this.pocetnaKoordinata[1] = pocetnaKoordinata[1];
-		this.pocetnaKoordinata[2] = pocetnaKoordinata[2];
+	
+	public Cube(int [] pocetnaKoordinata1, int duzinaKocke){
+		this.pocetnaKoordinata = new int [] { pocetnaKoordinata1[0], pocetnaKoordinata1[1], pocetnaKoordinata1[2]};
 		this.duzinaKocke = duzinaKocke;
-		this.dijagonalnaKoordinata[0] = pocetnaKoordinata[0] + duzinaKocke;
-		this.dijagonalnaKoordinata[1] = pocetnaKoordinata[1] + duzinaKocke;
-		this.dijagonalnaKoordinata[2] = pocetnaKoordinata[2] + duzinaKocke;
+		this.dijagonalnaKoordinata = new int [] { pocetnaKoordinata[0] + duzinaKocke, pocetnaKoordinata[1] + duzinaKocke, pocetnaKoordinata[2] + duzinaKocke};
 	}
 	
 	@Override
