@@ -2,46 +2,62 @@ package drone;
 
 public class Drone implements StandardDrone{
 
+	private FlySpace space;
+	private int[] coordinates;
+	
+	public Drone(int[] coordinates) {
+		this.coordinates = coordinates;
+	}
+	
+	public Drone(FlySpace space, int[] coordinates) {
+		this.space = space;
+		this.coordinates = new int[] {coordinates[0],coordinates[1],coordinates[2]};
+	}
+	
+	public Drone(Cube outer, Cube inner, int[] coordinates) {
+		space = new FlySpace(outer, inner);
+		this.coordinates = coordinates;
+	}	
+	
 	@Override
 	public String moveUp() {
-		// TODO Auto-generated method stub
-		return null;
+		coordinates[1]++;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveDown() {
-		// TODO Auto-generated method stub
-		return null;
+		coordinates[1]--;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveLeft() {
-		// TODO Auto-generated method stub
-		return null;
+		coordinates[0]--;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveRight() {
-		// TODO Auto-generated method stub
-		return null;
+		coordinates[0]++;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveBack() {
-		// TODO Auto-generated method stub
-		return null;
+		coordinates[2]++;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveForth() {
-		// TODO Auto-generated method stub
-		return null;
+		coordinates[2]--;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String getFormatedCoordinates() {
-		// TODO Auto-generated method stub
-		return null;
+		return "(" + Integer.toString(coordinates[0]) + "," + Integer.toString(coordinates[1]) + "," + Integer.toString(coordinates[2]) + ")";
 	}
 
 }
