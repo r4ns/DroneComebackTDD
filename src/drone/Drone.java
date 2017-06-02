@@ -1,47 +1,51 @@
 package drone;
 
 public class Drone implements StandardDrone{
+	
+	private int position[];
+	
 
 	@Override
 	public String moveUp() {
-		// TODO Auto-generated method stub
-		return null;
+		position[1] += 1;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveDown() {
-		// TODO Auto-generated method stub
-		return null;
+		position[1] -= 1;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveLeft() {
-		// TODO Auto-generated method stub
-		return null;
+		position[0] -= 1;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveRight() {
-		// TODO Auto-generated method stub
-		return null;
+		position[0] += 1;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveBack() {
-		// TODO Auto-generated method stub
-		return null;
+		position[2] += 1;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveForth() {
-		// TODO Auto-generated method stub
-		return null;
+		position[2] -= 1;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String getFormatedCoordinates() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		return "Drone position: (" + Integer.toString(position[0]) + ","
+				+ Integer.toString(position[1]) + ","  
+				+ Integer.toString(position[2]) + ")";	
+		}
 
 }
