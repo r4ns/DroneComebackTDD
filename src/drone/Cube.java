@@ -1,30 +1,38 @@
 package drone;
 
 public class Cube {
-	private Tacka goreLijevo;
-	private int duzinaStranice;
 	
-	public Cube(Tacka goreLijevo, int duzinaStranice)
-	{
-		this.goreLijevo=goreLijevo;
-		this.duzinaStranice=duzinaStranice;
+	int tackaA [] = new int[3];
+	int tackaB [] = new int[3];
+	public Cube(int[] koor){
+		tackaA = koor;
+	}
+	
+	public Cube(int[] koor, int stranica){
+		tackaA = koor;
+		for(int i = 0; i < 3; i++)
+			tackaB[i] = tackaA[i] + stranica;
+	}
+	
+	public int[] getTackaA() {
+		return tackaA;
 	}
 
-	public Tacka getGoreLijevo() {
-		return goreLijevo;
-	}
-
-	public int getDuzinaStranice() {
-		return duzinaStranice;
-	}
-
-	public void setGoreLijevo(Tacka goreLijevo) {
-		this.goreLijevo = goreLijevo;
-	}
-
-	public void setDuzinaStranice(int duzinaStranice) {
-		this.duzinaStranice = duzinaStranice;
-	}
-
+	public String getTackaAStr(){
+		return "(" + tackaA[0] + "," + tackaA[1] + "," + tackaA[2] + ")";
 		
+	}
+
+	public int[] getTackaB() {
+		return tackaB;
+	}
+	
+	public String getTackaBStr(){
+		return "(" + tackaB[0] + "," + tackaB[1] + "," + tackaB[2] + ")";
+		
+	}
+
+	public String getCubeStr() {
+		return getTackaAStr() + getTackaBStr();
+	}
 }

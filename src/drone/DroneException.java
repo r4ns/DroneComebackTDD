@@ -1,11 +1,5 @@
 package drone;
 
-public class DroneException {
-
-	public DroneException() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
+public class DroneException extends Exception{
 
 }
