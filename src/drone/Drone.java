@@ -27,7 +27,7 @@ public class Drone implements StandardDrone{
 
 	@Override
 	public String moveDown() {
-		if( fs.getOuterCube().getMinCoordinates()[1] < y && =fs.getInnerCube().getMinCoordinates()[1]) >= y|| (y >=fs.getInnerCube().getMaxCoordinates()[1] && y<=fs.getOuterCube().getMaxCoordinates()[1]))
+		if( (fs.getOuterCube().getMinCoordinates()[1] < y && fs.getInnerCube().getMinCoordinates()[1])>=y )|| (y >=fs.getInnerCube().getMaxCoordinates()[1] && y<=fs.getOuterCube().getMaxCoordinates()[1]))
 			y--;
 
 		return getFormatedCoordinates();
@@ -35,14 +35,16 @@ public class Drone implements StandardDrone{
 
 	@Override
 	public String moveLeft() {
-		// TODO Auto-generated method stub
-		return null;
+		if((x >= fs.getOuterCube().getMinCoordinates()[0]&& x<=fs.getInnerCube().getMinCoordinates()[0])|| (x >=fs.getInnerCube().getMaxCoordinates()[0] && x<=fs.getOuterCube().getMaxCoordinates()[0]))
+			x--;
+		return getFormatedCoordinates();
 	}
 
 	@Override
 	public String moveRight() {
-		// TODO Auto-generated method stub
-		return null;
+		if((x>= fs.getOuterCube().getMinCoordinates()[0]&& x<=fs.getInnerCube().getMinCoordinates()[0])|| (x >=fs.getInnerCube().getMaxCoordinates()[0]&&x+1<=fs.getOuterCube().getMaxCoordinates()[0]))
+			x++;
+		return getFormatedCoordinates();
 	}
 
 	@Override
