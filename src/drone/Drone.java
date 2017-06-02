@@ -56,6 +56,7 @@ public class Drone implements StandardDrone{
 	@Override
 	public String getFormatedCoordinates() {
 		// TODO Auto-generated method stub
+		System.out.println("X :" + coordinates[0] + "Y :" + coordinates[1] + "Z :" + coordinates[2]);
 		return null;
 	}
 
